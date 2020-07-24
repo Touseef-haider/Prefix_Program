@@ -1,0 +1,61 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+    background-color: honeydew;
+}
+.Container{
+    width: 100%;
+    height: 500px;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+}
+.Section{
+    width: 100%;
+    display: grid;
+    justify-content: center;
+}
+.Label h1{
+    color: blue;
+}
+.Input input{
+    width: 400px;
+    height: 40px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: large;
+    border: 2px solid blue;
+}
+.Button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Button button{
+    width: 230px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: large;
+    color: white;
+    background-color: lightgrey;
+    border: 2px solid blue;
+}
+.Button button:hover{
+    background-color: gray;
+    width: 260px;
+    transition: width 0.01s;
+}
+.Output input{
+    width: 400px;
+    height: 40px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: large;
+    border: 2px solid blue;
+}
+.Input input:hover,.Output input:hover{
+    width: 430px;
+}
