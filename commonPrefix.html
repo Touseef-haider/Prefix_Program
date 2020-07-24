@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Common prefix</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="Container">
+        <div class="Section">
+            <div class="Label">
+				<h1>Enter Text Followed By Comma</h1>
+			</div>
+			<div class="Input">
+			<input name="Input" type="text" id="Input">
+        	</div>
+			<br>
+			<div class="Button">
+        	<button class="Active" id="btn">Find the Common Prefix</button>
+			</div>
+			<br>
+			<div class="Output">
+        	<input type="text" id="Output">
+			</div>
+		</div>
+    </div>
+    <script>
+    let  sameChar;    
+    document.getElementById('btn').onclick=function(){
+        let value = `${document.getElementById('Input').value}`;
+		
+        sameChar=value.split(',');
+		document.getElementById('Output').value=CommonPrefix(sameChar);
+	
+    }
+    function CommonPrefix(sameChar){
+	var wanted = sameChar.length;
+ 	let anotherArray=[];
+ 	let k = 0;
+ 	for (let a = 0; a < sameChar.length; a++) {
+ 		for (let b = a+1; b < sameChar.length; b++) {
+ 			if (sameChar[a].length>sameChar[b].length) { 
+ 				let temp=sameChar[a];
+ 				sameChar[a]=sameChar[b]
+ 				sameChar[b]=temp;
+ 			}
+ 		}
+ 	}
+	
+	
+	console.log("Length of first element of the array "+sameChar[0].length)
+	let count = 0;
+	while(count<sameChar[0].length) { // This will run 2 times if the input is he->0,hell->1,hello->2
+	let i=0;
+	if (count<sameChar[0].length) {
+		for (let j = i+1; j < sameChar.length; j++) {
+			let end = sameChar[j].length;
+				for (let k = 0; k < end; k++) {
+					if(sameChar[i].charAt(count)===sameChar[j].charAt(k)){
+						anotherArray.push(sameChar[i].charAt(count));
+					}
+					else{
+						console.log("Hello")
+					}
+				}
+			}
+		}
+	count++;
+	i++;
+	} 
+	return anotherArray.join('');
+}
+
+    </script>
+</body>
+</html>
